@@ -1,4 +1,4 @@
-FROM node:24.22.1-bookworm-slim@sha256:dc1f22974dab4be31a8b56d58cb1f8fc218e83de83ccd831d885b3d7ac1223fb
+FROM node:24.22.1-bookworm-slim
 
 # add curl for healthcheck
 RUN apt-get update && \
@@ -21,7 +21,7 @@ COPY . .
 ENV PORT=80
 EXPOSE 80
 
-RUN chown -R node:node /app
+RUN chown -R node:node /usr/local/app
 USER node
 
 ENTRYPOINT ["/usr/bin/tini", "--"]

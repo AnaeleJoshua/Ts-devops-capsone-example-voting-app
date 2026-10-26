@@ -17,7 +17,7 @@ RUN dotnet publish -c release -o /app -a $TARGETARCH --self-contained false --no
 
 
 # Runtime stage
-FROM mcr.microsoft.com/dotnet/runtime:9.0.319-bookworm-slim-amd64 AS final
+FROM mcr.microsoft.com/dotnet/runtime:9.0 AS final
 
 WORKDIR /app
 
